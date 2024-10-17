@@ -1,11 +1,17 @@
 import type { Component } from 'solid-js';
 import styles from './App.module.css';
-import Inicio from './routes/inicio/Inicio';
+import { Router, Route } from '@solidjs/router';
+import routes from './routes/routes';
+
 
 const App: Component = () => {
   return (
     <div class={styles.App}>
-      <Inicio/>
+      <Router>
+        {routes.map((route) => (
+          <Route path={route.path} component={route.component} />
+        ))}
+      </Router>
     </div>
   );
 };
