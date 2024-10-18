@@ -50,7 +50,7 @@ export default function Carrou () {
               src={ParteRoja} 
               style={{ 
                 width: '110%', /* Aumenta el ancho para que abarque más espacio */
-                height: '525px', /* Aumenta la altura para que sea más grande */
+                height: '550px', /* Aumenta la altura para que sea más grande */
                 position: 'absolute', /* Posicionamiento absoluto para superponerla */
                 top: '0', 
                 right: '-20%', /* La mueve hacia la derecha para superponerse más sobre la otra imagen */
@@ -78,7 +78,7 @@ export default function Carrou () {
               src={ParteRoja} 
               style={{ 
                 width: '110%', /* Aumenta el ancho para que abarque más espacio */
-                height: '525px', /* Aumenta la altura para que sea más grande */
+                height: '550px', /* Aumenta la altura para que sea más grande */
                 position: 'absolute', /* Posicionamiento absoluto para superponerla */
                 top: '0', 
                 right: '-20%', /* La mueve hacia la derecha para superponerse más sobre la otra imagen */
@@ -106,7 +106,7 @@ export default function Carrou () {
               src={ParteRoja} 
               style={{ 
                 width: '110%', /* Aumenta el ancho para que abarque más espacio */
-                height: '525px', /* Aumenta la altura para que sea más grande */
+                height: '550px', /* Aumenta la altura para que sea más grande */
                 position: 'absolute', /* Posicionamiento absoluto para superponerla */
                 top: '0', 
                 right: '-20%', /* La mueve hacia la derecha para superponerse más sobre la otra imagen */

@@ -1,7 +1,7 @@
 import Footer from "../../components/footer/Footer";
-import CustomModal from "../../components/modal/modal";
 import Nav from "../../components/nav/nav";
-import CustomTable from "../../components/tabla/tabla";
+import Certific from "../../components/tabla/certificado";
+
 
 
 
@@ -13,7 +13,7 @@ export default function Certificado () {
             <Nav/>
             
 
-            <CustomTable/>
+            <Certific/>
 
 
             <Footer/>

@@ -20,7 +20,7 @@ export default function mageStat() {
     ];
   
     return (
-      <div style={{ display: 'grid', "grid-template-columns": '1fr 3fr 1fr', height: '550px', "margin-top": '10%', position: 'relative' }}>
+      <div style={{ display: 'grid', "grid-template-columns": '1fr 3fr 1fr', height: '618px', "margin-top": '10%', position: 'relative' }}>
         {/* Imagen izquierda */}
         <div style={{ "grid-column": 1, "z-index": 2, position: 'relative'}}>
           <img
@@ -36,7 +36,7 @@ export default function mageStat() {
           <img
             src={images[1].src}
             alt={images[1].alt}
-            style={{ width: '78%', height: '490px', position: 'relative' }}
+            style={{ width: '76%', height: '550px', position: 'relative' }}
             class="responsive-img"
           />
         </div>
