@@ -62,7 +62,7 @@ export default function Nav () {
 
 
                 <li style={{ display: 'inline' }}>
-                  <a href="#contact" style={{ color: 'black', "text-decoration": 'none', transition: 'background-color 0.3s ease', padding: "5%" }}>Contacto</a>
+                  <a href="/certificado" style={{ color: 'black', "text-decoration": 'none', transition: 'background-color 0.3s ease', padding: "5%" }}>Certificado</a>
                 </li>
               </ul>
             </div>
