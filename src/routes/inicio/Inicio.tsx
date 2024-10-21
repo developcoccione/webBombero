@@ -5,8 +5,11 @@ import Cards3 from '../../components/card/Cards';
 import Carrou from '../../components/carrousel/Carrousel';
 import Cards1 from '../../components/card/Cards1'
 import Footer from '../../components/footer/Footer';
+<<<<<<< HEAD
 import '../../css/fondo.css'
 
+=======
+>>>>>>> 72d18238d9d9e263977a72ce9af32e2fdda473fd
 
 
 function Inicio() {
