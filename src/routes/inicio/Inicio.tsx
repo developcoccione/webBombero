@@ -5,11 +5,13 @@ import Cards3 from '../../components/card/Cards';
 import Carrou from '../../components/carrousel/Carrousel';
 import Cards1 from '../../components/card/Cards1'
 import Footer from '../../components/footer/Footer';
+import '../../css/fondo.css'
+
 
 
 function Inicio() {
   return (
-    <div>
+    <div class='Fondo'>
       {/* Header con degradado */}
       <Nav/>
 

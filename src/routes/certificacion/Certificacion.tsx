@@ -1,7 +1,7 @@
 import Footer from "../../components/footer/Footer";
 import Nav from "../../components/nav/nav";
 import Certific from "../../components/tabla/certificado";
-
+import '../../css/fondo.css'
 
 
 
@@ -10,6 +10,7 @@ import Certific from "../../components/tabla/certificado";
 export default function Certificado () {
     return (
         <>
+         <div class='Fondo'>
             <Nav/>
             
 
@@ -17,6 +18,7 @@ export default function Certificado () {
 
 
             <Footer/>
+            </div>
         </>
     )
 }

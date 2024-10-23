@@ -1,13 +1,12 @@
-import { Box, Button, Grid, TextField } from "@suid/material";
+import { Box, Button, TextField } from "@suid/material";
 import { onMount, createSignal } from "solid-js";
 import M from "materialize-css";
-import LogoGob1 from '../../assets/logoGobernacion.png';
-import Escudo from '../../assets/escuoo.png'
-import Cancel from '../../assets/cancel.png'
+import Cancel from '../../assets/cancel.png';
+import '../../css/pave.css'
 
 export default function CustomModal() {
-  const [open, setOpen] = createSignal(false);  // Controla la apertura del modal
-  const [rif, setRif] = createSignal<string>("");  // Guarda el valor del RIF ingresado
+  const [open, setOpen] = createSignal(false); // Controla la apertura del modal
+  const [rif, setRif] = createSignal<string>(""); // Guarda el valor del RIF ingresado
 
   // Inicialización del modal de Materialize al montar el componente
   onMount(() => {
@@ -27,25 +26,22 @@ export default function CustomModal() {
     <>
       {/* Contenedor principal para centrar la tarjeta */}
       <div style={{ display: 'flex', "justify-content": 'center', "align-items": 'center', height: '100%' }}>
-        {/* Aumenta el ancho de la tarjeta cambiando las clases de columna */}
-        <div class="col s12 m8"> {/* Modificado: m8 para pantallas medianas, l6 para pantallas grandes */}
-          <Box component="div" class="card" sx={{ width: { xs: "60vh", sm: "70vh", md: "100vh" }}}>
+        <div class="col s12 m8">
+          <Box component="div" class="card" sx={{ width: { xs: "60vh", sm: "70vh", md: "100vh" } }}>
             <div class="card-content">
               {/* Formulario para ingresar el RIF */}
-              <form onSubmit={handleSubmit} style={{ position: "relative", "margin-top": "5%" }}>
+              <form onSubmit={handleSubmit} style={{"margin-top": "5%" }}>
                 <Box>
-                  <TextField
-                    label="Ingrese el RIF o número"
-                    id="standard-number"
-                    type="number"
-                    InputLabelProps={{
-                      shrink: true,
-                    }}
-                    variant="standard"
-                    defaultValue={rif()} // Mostrar el valor actual
-                    onInput={(e) => setRif((e.target as HTMLInputElement).value)} // Captura el valor del campo correctamente
-                    sx={{ width: "100%" }} // Ancho completo dentro de la tarjeta
+                <div class="input-field col s6">
+                  <input 
+                  id="standard-number" 
+                  type="number" 
+                  class="validate"
+                  value={rif()}
+                  onInput={(e) => setRif((e.target as HTMLInputElement).value)} // Captura el valor del campo correctamente
                   />
+                  <label for="last_name">Ingrese el RIF o número</label>
+                </div>
                 </Box>
 
                 {/* Botón para abrir el modal */}
@@ -75,105 +71,51 @@ export default function CustomModal() {
       </div>
 
       {/* Modal que se abre con el botón */}
-      <div id="modal1" class="modal" style={{ display: open() ? "block" : "none" }}>
-        <div class="modal-content">
-          <small>
-          <Box>
-          <div style={{ display: 'grid', "grid-template-columns": '1fr 2fr 1fr', height: '110px', "margin-top": '5%', position: 'relative' }}>
-              {/* Imagen izquierda */}
-              <div style={{ "grid-column": 1, "z-index": 2, position: 'relative', transform: 'translateY(-10%)', "text-align": 'center' }}>
-                  <Box component="div" sx={{textAlign: "center"}}>                  
-                    <img src={LogoGob1} width="100%" height="30%" alt="" />
-                  </Box>
-              </div>
+<div id="modal1" class="modal" style={{ display: open() ? "block" : "none", "border-bottom": '10px solid #fbf11f' }}>
+  <div class="modal-content">
+   
 
-              {/* Imagen centro */}
-              <div style={{ "grid-column": 2, "z-index": 1, position: 'relative', "text-align": 'center' }}>
-                  <Box component="div" sx={{textAlign: "center"}}>                  
-                    REPÚBLICA BOLIVARIANA DE VENEZUELA<br/>
-                    GOBERNACIÓN DEL ESTADO MONAGAS<br/>
-                    SECRETARÍA DE SEGURIDAD CIUDADANA<br/>
-                    SERVICIO AUTÓNOMO DEL CUERPO DE BOMBEROS DEL ESTADO MONAGAS<br/>
-                    ÁREA DE PREVENCIÓN E INVESTIGACIÓN DE INCENDIOS Y OTROS SINIESTROS DIVISIÓN DE PREVENCIÓN<br/><br/>
-                  </Box>
-              </div>
+    {/* Card estilo Confluence - Neutral */}
+    <section class="card neutral">
+      <div class="main-content">
+        <div class="card-title status-label">Información del Personal</div>
 
-              {/* Imagen derecha */}
-              <div style={{ "grid-column": 3, "z-index": 2, position: 'relative', transform: 'translateY(-10%)', "text-align": 'center', "margin-left": "4%" }}>
-                  <Box component="div" sx={{textAlign: "center"}}>                  
-                    <img src={Escudo} width="50%" height="50%" alt="" />
-                  </Box>
-              </div>
-            </div>
-          
-          <Box component="div" sx={{textAlign: "right"}}>Código Nº  APIIOS/DP-MUNICIPIO __________/PV-XXX/2024</Box><br/><br/>
+        <dl class="info-listing clearfix">
+          <dt class="ion-ios-toggle">RIF</dt>
+          <dd>J-{rif()}</dd>
 
-          <Box component="div" sx={{textAlign: "justify"}}> La División de Prevención, adscrito al Área De Prevención E Investigación De Incendios Y Otros Siniestros, del Servicio Autónomo del Cuerpo de Bomberos del Estado Monagas, en respuesta a la solicitud de inspección de fecha: ___/___/2024, y en cumplimiento a lo descrito y exigido en: Articulo Nº 51 de la Constitución de la República Bolivariana de Venezuela, Ley Orgánica del Servicio de Bombero y de los Cuerpos de Bomberos y Bomberas y Administración de Emergencias de Carácter Civil, Decreto 6702 de fecha 28/12/15, Capítulo I, Atribuciones de los Cuerpos de Bomberos y Bomberas, Artículo 13. Lo demarcado en el Decreto Nº 2.195 (Reglamento sobre Prevención de Incendios) de fecha 31/10/83, Ley de Creación y Tasas del Servicio Autónomo del Cuerpo de Bomberos y Administración de Emergencia de Carácter Civil del Estado Monagas, Publicada el 26/03/2024  y FONDONORMAS a consultar, certifica que el inmueble: Cumple con los requisitos de Prevención y Protección contra Incendios, y por consiguiente se otorga el: Certificado de Conformidad de Uso Bomberil a La Denominación Comercial:</Box><br/>
+          <dt class="ion-ios-pricetag">Dirección</dt>
+          <dd>Avenida Principal, Maturín</dd>
 
-          _______________________________________________________ C.A<br/><br/>
+          <dt class="ion-ios-pricetag">Nombre de Empresa</dt>
+          <dd>Empresa ABC</dd>
 
+          <dt class="ion-ios-pricetag">Nombre de Inspección</dt>
+          <dd>Inspección General</dd>
 
-          <Box component="div">Rif: J-{rif()}</Box><br/>
+          <dt class="ion-ios-pricetag">Nombre de Inspector</dt>
+          <dd>John Doe</dd>
 
-          Dirección:______________________________________________________________________________________________________________<br/><br/>
+          <dt class="ion-ios-pricetag">Requisitos</dt>
+          <dd>En progreso</dd>
 
-          Representante Legal: ______________________ de cédula de Identidad  Nº: V-_____________<br/><br/>
-       
+          <dt class="ion-ios-pricetag">¿Ha sido sancionado?</dt>
+          <dd>No</dd>
 
-          <Box component="div" sx={{textAlign: "justify"}}>CERTIFICACIÓN VALIDA POR: 1 AÑO A PARTIR DE LA PRESENTE FECHA.
-          NOTA: Este certificado es emitido sin enmiendas y sin tachaduras y quedará anulado de forma AUTOMATICA, de comprobarse el cambio de uso, modificación o cambios del inmueble, al sufrir daños o deterioro de los equipos de prevención y protección contra incendios, debiendo notificar y reparar de manera expedita e inmediata las irregularidades que se presenten.</Box><br/>
-
-          <Box component="div" sx={{textAlign: "center"}}>“DISCIPLINA Y ABNEGACIÓN”</Box><br/>
-
-          <Box>
-            <div style={{ display: 'grid', "grid-template-columns": '1fr 1fr 1fr', height: '100px', "margin-top": '5%', position: 'relative' }}>
-              {/* Imagen izquierda */}
-              <div style={{ "grid-column": 1, "z-index": 2, position: 'relative', transform: 'translateY(-10%)', "text-align": 'center' }}>
-                  <Box component="div" sx={{textAlign: "center"}}>                  
-                    _____________________________<br/>
-                    Inspector Actuante  N° XX
-                  </Box>
-              </div>
-
-              {/* Imagen centro */}
-              <div style={{ "grid-column": 2, "z-index": 1, position: 'relative', "text-align": 'center' }}>
-                  <Box component="div" sx={{textAlign: "center"}}>                  
-                  _____________________________________<br/>
-                  Gral. (B) Jonathan Morales
-                  Director del Servicio Autónomo del Cuerpo de 
-                  Bomberos del Estado Monagas.
-                  Según Gaceta Oficial del Estado Monagas.
-                  Decreto Nº  G-00043/2023.
-
-                  </Box>
-              </div>
-
-              {/* Imagen derecha */}
-              <div style={{ "grid-column": 3, "z-index": 2, position: 'relative', transform: 'translateY(-10%)', "text-align": 'center', "margin-left": "4%" }}>
-                  <Box component="div" sx={{textAlign: "center"}}>                  
-                    _____________________________<br/>
-                    Tte Cnel. (B) Lcda. Kaliana Campos.
-                    INSPECTORA N° 036
-                    Jefa De División De Prevención E Investigación 
-                    de Incendios y Otros Siniestros.
-                    ORDEN GENERAL N° 015/2023.
-
-                  </Box>
-              </div>
-            </div>
-          </Box>
-          </Box>
-          </small>
-
-          
-        </div>
-        <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat" onClick={() => setOpen(false)}>
-          <img src={Cancel} width="100%" height="100%" alt="" />
-        </a>
+          <dt class="ion-ios-pricetag">¿Está vigente?</dt>
+          <dd>Sí</dd>
+        </dl>
       </div>
+    </section>
+  </div>
 
-      </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat" onClick={() => setOpen(false)}>
+      <img src={Cancel} width="100%" height="100%" alt="" />
+    </a>
+  </div>
+</div>
+
     </>
   );
 }

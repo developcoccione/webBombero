@@ -40,7 +40,7 @@ export default function Nav () {
 
 
       {/* Header con enlaces uno al lado del otro con efecto hover y color negro */}
-      <header class="page-footer z-depth-2" style={{ background: '#ffff', "margin-bottom": '3%', "padding-top": '0.3%' }}>
+      <header class="page-footer z-depth-2" style={{ background: '#ffff', "margin-bottom": '3%', "padding-top": '0.3%', "font-size": "125%", "font-family": "Franklin Gothic Medium', 'Arial Narrow" }}>
         <div class="container">
           <div class="row">
             {/* Enlaces colocados uno al lado del otro */}

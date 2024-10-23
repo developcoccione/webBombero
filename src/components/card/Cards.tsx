@@ -38,7 +38,7 @@ export default function Cards3 () {
                         height="250"
                         image={card.image}
                         alt="Card Image"
-                        sx={{ borderBottom: '10px solid #fbf11f' }}
+                        sx={{ borderBottom: '10px solid #fbf11f', filter: 'blur(2px)' }}
                     />
                     <CardContent>
                         <p style="font-size: 125%">{card.text}</p>
@@ -54,7 +54,7 @@ export default function Cards3 () {
                     height="637"
                     image={cardsData[2].image}
                     alt="Tarjeta Grande"
-                    sx={{ borderBottom: '10px solid #fbf11f' }} 
+                    sx={{ borderBottom: '10px solid #fbf11f',filter: 'blur(2px)' }} 
                     />
                     <CardContent>
                     <p style="font-size: 125%">{cardsData[2].text}</p>

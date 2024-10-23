@@ -1,5 +1,4 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@suid/material";
-import CustomModal from "../modal/modal";
 
 export default function CustomTable() {
   return (
@@ -158,8 +157,6 @@ export default function CustomTable() {
         </TableBody>
       </Table>
     </TableContainer>
-
-    <CustomModal/>
     </>
   );
 }

@@ -4,6 +4,7 @@ import ImageStat from "../../components/carrousel/ImageStatic";
 import Footer from "../../components/footer/Footer";
 import Nav from "../../components/nav/nav";
 import ImageText from "../../components/aside/aside";
+import '../../css/fondo.css'
 
 
 
@@ -11,6 +12,7 @@ import ImageText from "../../components/aside/aside";
 function Trayecto () {
     return (
         <>
+          <div class='Fondo'>
             <Nav/>
 
             <Cardtra/>
@@ -32,6 +34,7 @@ function Trayecto () {
             <ImageText/>
 
             <Footer/>
+            </div>
         </>
     )
 }

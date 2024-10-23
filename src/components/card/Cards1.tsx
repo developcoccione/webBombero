@@ -39,7 +39,7 @@ export default function Cards1 () {
                       height="100%"
                       image={cardsData[3].image}
                       alt="Tarjeta Grande"
-                      sx={{ objectFit: 'cover', height: '100%', width: '130%', borderBottom: '10px solid #fbf11f' }}
+                      sx={{ objectFit: 'cover', height: '100%', width: '130%', borderBottom: '10px solid #fbf11f', filter: 'blur(2px)' }}
                     />
                   </Grid>
 
