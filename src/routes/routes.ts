@@ -3,6 +3,7 @@ import {Component} from 'solid-js'
 import Inicio from './inicio/Inicio'
 import Trayecto from './trayecto/trayecto';
 import Certificado from './certificacion/Certificacion';
+import Mascotas from './mascotas/mascotas';
 
 const routes: RouteProps<any, () => Component>[] = [
   {
@@ -16,6 +17,10 @@ const routes: RouteProps<any, () => Component>[] = [
   {
     path: '/certificado',
     component: Certificado,
+  },
+  {
+    path: '/mascotas',
+    component: Mascotas,
   },
 ];
 

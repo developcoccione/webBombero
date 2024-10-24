@@ -45,25 +45,24 @@ export default function CustomModal() {
                 </Box>
 
                 {/* Botón para abrir el modal */}
-                <Button
+                <button
                   href="#modal1"
                   type="submit"
                   class="waves-effect waves-light btn red darken-2 modal-trigger"
-                  sx={{
+                  style={{
                     color: "white",
                     left: "50%",
                     transform: "translateX(-50%)", // Para centrar el botón
                     display: "flex",
-                    justifyContent: "center", // Centra el texto horizontalmente
-                    alignItems: "center", // Centra el texto verticalmente
-                    height: "50px", // Altura del botón
-                    width: { xs: "180px", sm: "220px", md: "250px" }, // Ancho ajustado para distintos tamaños de pantalla
-                    fontSize: { xs: "80%", sm: "90%", md: "100%" }, // Tamaño de fuente adaptable
-                    marginTop: "4%",
+                    "justify-content": "center", // Centra el texto horizontalmente
+                    "align-items": "center", // Centra el texto verticalmente
+                    height: "50px",
+                    "font-size" : " sx: 80%, sm: 90%, md: 100%" , // Tamaño de fuente adaptable
+                    "margin-top": "4%",
                   }}
                 >
                   Consultar Certificado
-                </Button>
+                </button>
               </form>
             </div>
           </Box>
@@ -71,49 +70,50 @@ export default function CustomModal() {
       </div>
 
       {/* Modal que se abre con el botón */}
-<div id="modal1" class="modal" style={{ display: open() ? "block" : "none", "border-bottom": '10px solid #fbf11f' }}>
-  <div class="modal-content">
-   
+      <div id="modal1" class="modal" style={{ display: open() ? "block" : "none", "border-bottom": '1px solid #fbf11f' }}>
+        <div class="modal-content">
+        
+          <div class="modal-footer" style={{"margin-top": "-4%", "margin-bottom": "-2%"}}>
+            <a href="#!" class="modal-close waves-green btn-flat" onClick={() => setOpen(false)}>
+              <img src={Cancel} width="100%" height="100%" alt="" />
+            </a>
+          </div>
 
-    {/* Card estilo Confluence - Neutral */}
-    <section class="card neutral">
-      <div class="main-content">
-        <div class="card-title status-label">Información del Personal</div>
+          {/* Card estilo Confluence - Neutral */}
+          <section class="card neutral">
+            <div class="main-content">
+              <div class="card-title status-label">Información del Personal</div>
 
-        <dl class="info-listing clearfix">
-          <dt class="ion-ios-toggle">RIF</dt>
-          <dd>J-{rif()}</dd>
+              <dl class="info-listing clearfix">
+                <dt class="ion-ios-toggle">RIF</dt>
+                <dd>J-{rif()}</dd>
 
-          <dt class="ion-ios-pricetag">Dirección</dt>
-          <dd>Avenida Principal, Maturín</dd>
+                <dt class="ion-ios-pricetag">Dirección</dt>
+                <dd>Avenida Principal, Maturín</dd>
 
-          <dt class="ion-ios-pricetag">Nombre de Empresa</dt>
-          <dd>Empresa ABC</dd>
+                <dt class="ion-ios-pricetag">Nombre de Empresa</dt>
+                <dd>Empresa ABC</dd>
 
-          <dt class="ion-ios-pricetag">Nombre de Inspección</dt>
-          <dd>Inspección General</dd>
+                <dt class="ion-ios-pricetag">Nombre de Inspección</dt>
+                <dd>Inspección General</dd>
 
-          <dt class="ion-ios-pricetag">Nombre de Inspector</dt>
-          <dd>John Doe</dd>
+                <dt class="ion-ios-pricetag">Nombre de Inspector</dt>
+                <dd>John Doe</dd>
 
-          <dt class="ion-ios-pricetag">Requisitos</dt>
-          <dd>En progreso</dd>
+                <dt class="ion-ios-pricetag">Requisitos</dt>
+                <dd>En progreso</dd>
 
-          <dt class="ion-ios-pricetag">¿Ha sido sancionado?</dt>
-          <dd>No</dd>
+                <dt class="ion-ios-pricetag">¿Ha sido sancionado?</dt>
+                <dd>No</dd>
 
-          <dt class="ion-ios-pricetag">¿Está vigente?</dt>
-          <dd>Sí</dd>
-        </dl>
-      </div>
-    </section>
-  </div>
+                <dt class="ion-ios-pricetag">¿Está vigente?</dt>
+                <dd>Sí</dd>
+              </dl>
+            </div>
+          </section>
+        </div>
 
-  <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect waves-green btn-flat" onClick={() => setOpen(false)}>
-      <img src={Cancel} width="100%" height="100%" alt="" />
-    </a>
-  </div>
+  
 </div>
 
     </>

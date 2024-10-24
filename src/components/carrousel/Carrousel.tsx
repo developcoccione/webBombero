@@ -2,10 +2,10 @@ import { onMount } from 'solid-js';
 import 'materialize-css/dist/css/materialize.min.css'; // Importamos Materialize CSS
 import M from 'materialize-css'; // Importamos Materialize JS
 import F1 from '../../assets/foto1.jpg';
-import F2 from '../../assets/foto2.jpg';
-import F3 from '../../assets/foto3.jpg';
-import F7 from '../../assets/Image7.png'
-import ParteRoja from '../../assets/Imagen3.png';
+import F2 from '../../assets/image15.jpg';
+import F3 from '../../assets/foto11.jpg';
+import F7 from '../../assets/image10.jpg'
+import Partelado from '../../assets/Imagen3.png';
 
 export default function Carrou() {
     let carouselRef: HTMLDivElement | undefined;
@@ -36,22 +36,22 @@ export default function Carrou() {
                         {/* Primera imagen del carrusel ocupando toda la pantalla */}
                         <div class="col s12" style={{ padding: 0 }}>
                             <img 
-                                src={F7} 
-                                style={{ width: '100%', height: '525px', margin: 0 }} // Establece la altura aquí
+                                src={F3} 
+                                style={{ width: '100%', height: '500px', margin: 0 }} // Establece la altura aquí
                                 alt="Imagen 1" 
                             />
                         </div>
                         {/* Segunda imagen del carrusel, superpuesta y de mayor tamaño */}
                         <div class="col s12" style={{ padding: 0, position: 'absolute', top: 0, left: "10%"}}>
                             <img 
-                                src={ParteRoja}
+                                src={Partelado}
                                 class="ParteRoja"
                                 style={{ 
                                     width: '40%', /* Aumenta el ancho para que abarque más espacio */
-                                    height: '525px', /* Altura automática para mantener la proporción */
+                                    height: '500px', /* Altura automática para mantener la proporción */
                                     position: 'absolute', /* Posicionamiento absoluto para superponerla */
                                     top: '0', 
-                                    "z-index": 5, /* Asegura que esté por encima de la otra imagen */
+                                    "z-index": 3, /* Asegura que esté por encima de la otra imagen */
                                     margin: 0,
                                     filter: "hue-rotate(0deg)"
                                 }} 
@@ -73,14 +73,14 @@ export default function Carrou() {
                         {/* Segunda imagen del carrusel, superpuesta y de mayor tamaño */}
                         <div class="col s12" style={{ padding: 0, position: 'absolute', top: 0, left: "10%"}}>
                             <img 
-                                src={ParteRoja}
+                                src={Partelado}
                                 class="ParteRoja"
                                 style={{ 
                                     width: '40%', /* Aumenta el ancho para que abarque más espacio */
                                     height: '500px', /* Altura automática para mantener la proporción */
                                     position: 'absolute', /* Posicionamiento absoluto para superponerla */
                                     top: '0', 
-                                    "z-index": 5, /* Asegura que esté por encima de la otra imagen */
+                                    "z-index": 3, /* Asegura que esté por encima de la otra imagen */
                                     margin: 0 
                                 }} 
                                 alt="Imagen Roja Superpuesta" 
@@ -93,7 +93,7 @@ export default function Carrou() {
                         {/* Primera imagen del carrusel ocupando toda la pantalla */}
                         <div class="col s12" style={{ padding: 0 }}>
                             <img 
-                                src={F3} 
+                                src={F7} 
                                 style={{ width: '100%', height: '500px', margin: 0 }} // Establece la altura aquí
                                 alt="Imagen 1" 
                             />
@@ -101,14 +101,14 @@ export default function Carrou() {
                         {/* Segunda imagen del carrusel, superpuesta y de mayor tamaño */}
                         <div class="col s12" style={{ padding: 0, position: 'absolute', top: 0, left: "10%"}}>
                             <img 
-                                src={ParteRoja}
+                                src={Partelado}
                                 class="ParteRoja"
                                 style={{ 
                                     width: '40%', /* Aumenta el ancho para que abarque más espacio */
                                     height: '500px', /* Altura automática para mantener la proporción */
                                     position: 'absolute', /* Posicionamiento absoluto para superponerla */
                                     top: '0', 
-                                    "z-index": 5, /* Asegura que esté por encima de la otra imagen */
+                                    "z-index": 3, /* Asegura que esté por encima de la otra imagen */
                                     margin: 0 
                                 }} 
                                 alt="Imagen Roja Superpuesta" 
@@ -120,4 +120,3 @@ export default function Carrou() {
         </>
     );
 }
-

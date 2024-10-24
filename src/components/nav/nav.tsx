@@ -44,25 +44,49 @@ export default function Nav () {
         <div class="container">
           <div class="row">
             {/* Enlaces colocados uno al lado del otro */}
-            <div class="col s6" style={{"margin-left": "3%"}}>
-              <ul class="right">
-                <li style={{ display: 'inline', "margin-right": '25%' }}>
-                  <a href="/"style={{ color: 'black', "text-decoration": 'none', transition: 'background-color 0.3s ease', padding: "5%" }}>Inicio</a>   
+            <div>
+              <ul class="center">
+
+                <li style={{ display: 'inline'}}>
+                  <Button href="/"sx={{ color: '#242088', textDecoration: 'none', transition: 'background-color 0.3s ease' }}>Inicio</Button>   
                 </li>
 
-                <li style={{ display: 'inline', "margin-right": '20%' }}>
-                  <a href="/trayecto" style={{ color: 'black', "text-decoration": 'none', transition: 'background-color 0.3s ease', padding: "5%" }}>Institucion</a>
+
+                <li style={{ display: 'inline'}}>
+                  <Button href="/trayecto" sx={{ color: '#242088', textDecoration: 'none', transition: 'background-color 0.3s ease', }}>Institucion</Button>
                 </li>
+
 
               
 
-
-
-
-
-
                 <li style={{ display: 'inline' }}>
-                  <a href="/certificado" style={{ color: 'black', "text-decoration": 'none', transition: 'background-color 0.3s ease', padding: "5%" }}>Certificado</a>
+                  <Button 
+                  id="basic-button"
+                  aria-controls={open() ? "basic-menu" : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open() ? "true" : undefined}
+                  onClick={(event) => {
+                    setAnchorEl(event.currentTarget);
+                  }}
+                  sx={{ 
+                    color: '#242088', 
+                    textDecoration: 'none', 
+                    transition: 'background-color 0.3s ease'
+                    }}>CERTIFICADO</Button>
+                    <Menu
+                      id="basic-menu"
+                      anchorEl={anchorEl()}
+                      open={open()}
+                      onClose={handleClose}
+                      MenuListProps={{ "aria-labelledby": "basic-button" }}
+                    >
+                      <MenuItem onClick={handleClose}><Button href="#" sx={{ color: 'black', textDecoration: 'none', transition: 'background-color 0.3s ease', }}>Requisitos</Button></MenuItem>
+                      <MenuItem onClick={handleClose}><Button href="/certificado" sx={{ color: 'black', textDecoration: 'none', transition: 'background-color 0.3s ease', }}>Consulta</Button></MenuItem>
+                    </Menu>
+                </li>
+
+                <li style={{ display: 'inline'}}>
+                      <Button href="/mascotas" sx={{ color: '#242088', textDecoration: 'none', transition: 'background-color 0.3s ease', }}>mascotas</Button>
                 </li>
               </ul>
             </div>
