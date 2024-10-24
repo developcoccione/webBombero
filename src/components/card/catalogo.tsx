@@ -27,7 +27,7 @@ export default function AnimalCatalog() {
     <Container sx={{ marginTop: '5%', marginLeft: '5%' }}>
       <Grid container spacing={4}>
         {animalsData.map((animal) => (
-          <Grid item xs={11} sm={5} md={4}>
+          <Grid item xs={11} sm={5} md={4} xl={4}>
             <Card class="hoverable" style={{ width: '100%' }}>
               <CardMedia
                 component="img"

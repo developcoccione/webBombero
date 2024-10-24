@@ -1,14 +1,20 @@
 import { Grid } from '@suid/material';
-import { Card, CardContent, CardMedia } from '@suid/material';
+import { Card, CardContent } from '@suid/material';
 
 export default function CardTra() {
 
   const cardsData = [
     {
+      text: "Vision"
+    },
+    {
+      text: " Los Cuerpos de Bomberos y Bomberas y Administración de Emergencias de carácter civil, son los órganos competentes para la prevención, preparación y atención de incendios y otras emergencias; así como para la realización de inspecciones técnicas y emisión de informes sobre las condiciones de seguridad en espacios públicos, comerciales o privados de uso público."
+    },
+    {
       text: "Mision"
     },
     {
-      text: " Artículo 12. El Servicio Autónomo del Cuerpo de Bomberos y Bomberas del estado Monagas es un órgano de prevención y seguridad ciudadana, conforme a lo establecido en la Constitución de la República Bolivariana de Venezuela y por su finalidad y atribuciones establecidas en Ley Orgánica del Servicio de Bombero y de los Cuerpos de Bomberos y Bomberas y en la presente Ley; es una institución uniformada y jerarquizada, sin militancia política, cuya misión es la de intervenir oportunamente como primera respuesta en la atención de las emergencias, para salvaguardar la vida y bienes en todo el territorio del estado Monagas y actuará de manera coordinada con otros entes u órganos competentes en la atención de desastres, producto de amenazas, eventos o calamidades naturales, socio naturales, antrópicos o de otro origen, así como también, con otros entes competentes en la atención de accidentes aéreos y marítimos u otras emergencias que ocurran en el ámbito territorial de su competencia. El Servicio Autónomo del Cuerpo de Bomberos y Bomberas del estado Monagas, interactúa en armonía con los diversos actores locales, en conjunción con la participación activa de las comunidades, organizaciones civiles, y organizaciones de base del Poder Popular, para el logro del bien común en materia de prevención y seguridad ciudadana"
+      text: " Salvaguardar la vida y los bienes de la ciudadanía frente a situaciones que representen amenaza, vulnerabilidad o riesgo. Actuar como consultores y promotores en materia de gestión de riesgo, asociados a las comunidades. Cooperar con el mantenimiento y restablecimiento del orden público en casos de emergencia. Desarrollar y ejecutar actividades de prevención, protección, combate y extinción de incendios y otros eventos generadores de daños, así como la investigación de sus causas. Atender eventos generadores de daños donde estén involucrados materiales."
     },
   ];
 
@@ -19,12 +25,21 @@ export default function CardTra() {
         <Grid item xs={10} sm={10}>
           <Card class="hoverable" sx={{ marginBottom: '5.9%', width: '100%', borderBottom: '10px solid #fbf11f'}}>
             <CardContent>
-              <p style={{ "font-size": '125%' }}>{cardsData[0].text}</p>
-              <p style={{ "font-size": '125%' }}>{cardsData[1].text}</p>
+              <p style={{ "font-size": '125%' }}>{cardsData[2].text}</p>
+              <p style={{ "font-size": '125%', "text-align": "justify", padding: "0 5% 0 5%" }}>{cardsData[3].text}</p>
             </CardContent>
           </Card>
         </Grid>
-      
+
+        <Grid item xs={10} sm={10}>
+          <Card class="hoverable" sx={{ marginBottom: '5.9%', width: '100%', borderBottom: '10px solid #db1322'}}>
+            <CardContent>
+              <p style={{ "font-size": '125%' }}>{cardsData[0].text}</p>
+              <p style={{ "font-size": '125%', "text-align": "justify", padding: "0 5% 0 5%"   }}>{cardsData[1].text}</p>
+            </CardContent>
+          </Card>
+        </Grid>
+
       </Grid>
     </div>
   );

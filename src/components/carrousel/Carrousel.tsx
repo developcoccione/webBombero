@@ -32,7 +32,7 @@ export default function Carrou() {
         <>
             <div ref={carouselRef} class="carousel carousel-slider">
                 <div class="carousel-item">
-                    <div class="row" style={{ margin: 0, position: 'relative' }}>
+                    <div class="row" style={{  position: 'relative'}}>
                         {/* Primera imagen del carrusel ocupando toda la pantalla */}
                         <div class="col s12" style={{ padding: 0 }}>
                             <img 

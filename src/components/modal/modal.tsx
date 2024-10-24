@@ -1,4 +1,4 @@
-import { Box, Button, TextField } from "@suid/material";
+import { Box, Button, styled, TextField } from "@suid/material";
 import { onMount, createSignal } from "solid-js";
 import M from "materialize-css";
 import Cancel from '../../assets/cancel.png';
@@ -25,7 +25,7 @@ export default function CustomModal() {
   return (
     <>
       {/* Contenedor principal para centrar la tarjeta */}
-      <div style={{ display: 'flex', "justify-content": 'center', "align-items": 'center', height: '100%' }}>
+      <div style={{ display: 'flex', "justify-content": 'center', "align-items": 'center', height: '100%', "margin-top": "5%  " }}>
         <div class="col s12 m8">
           <Box component="div" class="card" sx={{ width: { xs: "60vh", sm: "70vh", md: "100vh" } }}>
             <div class="card-content">
