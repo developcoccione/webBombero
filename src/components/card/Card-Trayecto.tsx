@@ -19,11 +19,11 @@ export default function CardTra() {
   ];
 
   return (
-    <div style={{ "margin-top": '9%', "margin-left": "14.5%",}}>
+    <div style={{margin: "9% 10% 10% 10%",}}>
       <Grid container spacing={10}>
 
-        <Grid item xs={10} sm={10}>
-          <Card class="hoverable" sx={{ marginBottom: '5.9%', width: '100%', borderBottom: '10px solid #fbf11f'}}>
+        <Grid item xs={12} sm={12} lg={12}>
+          <Card class="hoverable" sx={{borderBottom: '10px solid #fbf11f'}}>
             <CardContent>
               <p style={{ "font-size": '125%' }}>{cardsData[2].text}</p>
               <p style={{ "font-size": '125%', "text-align": "justify", padding: "0 5% 0 5%" }}>{cardsData[3].text}</p>
@@ -31,15 +31,14 @@ export default function CardTra() {
           </Card>
         </Grid>
 
-        <Grid item xs={10} sm={10}>
-          <Card class="hoverable" sx={{ marginBottom: '5.9%', width: '100%', borderBottom: '10px solid #db1322'}}>
+        <Grid item xs={12} sm={12} lg={12}>
+          <Card class="hoverable" sx={{  borderBottom: '10px solid #db1322'}}>
             <CardContent>
               <p style={{ "font-size": '125%' }}>{cardsData[0].text}</p>
               <p style={{ "font-size": '125%', "text-align": "justify", padding: "0 5% 0 5%"   }}>{cardsData[1].text}</p>
             </CardContent>
           </Card>
         </Grid>
-
       </Grid>
     </div>
   );

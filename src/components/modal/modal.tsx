@@ -1,8 +1,8 @@
-import { Box, Button, styled, TextField } from "@suid/material";
+import { Box, Button, styled, TextField, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@suid/material";
 import { onMount, createSignal } from "solid-js";
 import M from "materialize-css";
 import Cancel from '../../assets/cancel.png';
-import '../../css/pave.css'
+import '../../css/pave.css';
 
 export default function CustomModal() {
   const [open, setOpen] = createSignal(false); // Controla la apertura del modal
@@ -22,26 +22,40 @@ export default function CustomModal() {
     }
   };
 
+  const rows = [
+    { 
+      rif: "J-12345678-9",
+      direccion: "Avenida Principal, Maturín",
+      empresa: "Empresa ABC",
+      inspeccion: "Inspección General",
+      inspector: "John Doe",
+      requisitos: "No",
+      sancionado: "No",
+      vigente: "Sí"
+    },
+    // Agrega más filas de datos si es necesario
+  ];
+
   return (
     <>
       {/* Contenedor principal para centrar la tarjeta */}
-      <div style={{ display: 'flex', "justify-content": 'center', "align-items": 'center', height: '100%', "margin-top": "5%  " }}>
+      <div style={{ display: 'flex', "justify-content": 'center', "align-items": 'center', height: '100%', "margin-top": "5%" }}>
         <div class="col s12 m8">
           <Box component="div" class="card" sx={{ width: { xs: "60vh", sm: "70vh", md: "100vh" } }}>
             <div class="card-content">
               {/* Formulario para ingresar el RIF */}
-              <form onSubmit={handleSubmit} style={{"margin-top": "5%" }}>
+              <form onSubmit={handleSubmit} style={{ "margin-top": "5%" }}>
                 <Box>
-                <div class="input-field col s6">
-                  <input 
-                  id="standard-number" 
-                  type="number" 
-                  class="validate"
-                  value={rif()}
-                  onInput={(e) => setRif((e.target as HTMLInputElement).value)} // Captura el valor del campo correctamente
-                  />
-                  <label for="last_name">Ingrese el RIF o número</label>
-                </div>
+                  <div class="input-field col s6">
+                    <input 
+                      id="standard-number" 
+                      type="number" 
+                      class="validate"
+                      value={rif()}
+                      onInput={(e) => setRif((e.target as HTMLInputElement).value)} // Captura el valor del campo correctamente
+                    />
+                    <label for="last_name">Ingrese el RIF o número</label>
+                  </div>
                 </Box>
 
                 {/* Botón para abrir el modal */}
@@ -57,7 +71,7 @@ export default function CustomModal() {
                     "justify-content": "center", // Centra el texto horizontalmente
                     "align-items": "center", // Centra el texto verticalmente
                     height: "50px",
-                    "font-size" : " sx: 80%, sm: 90%, md: 100%" , // Tamaño de fuente adaptable
+                    "font-size": "sx: 80%, sm: 90%, md: 100%", // Tamaño de fuente adaptable
                     "margin-top": "4%",
                   }}
                 >
@@ -72,8 +86,7 @@ export default function CustomModal() {
       {/* Modal que se abre con el botón */}
       <div id="modal1" class="modal" style={{ display: open() ? "block" : "none", "border-bottom": '1px solid #fbf11f' }}>
         <div class="modal-content">
-        
-          <div class="modal-footer" style={{"margin-top": "-4%", "margin-bottom": "-2%"}}>
+          <div class="modal-footer" style={{ "margin-top": "-4%", "margin-bottom": "-2%" }}>
             <a href="#!" class="modal-close waves-green btn-flat" onClick={() => setOpen(false)}>
               <img src={Cancel} width="100%" height="100%" alt="" />
             </a>
@@ -84,38 +97,44 @@ export default function CustomModal() {
             <div class="main-content">
               <div class="card-title status-label">Información del Personal</div>
 
-              <dl class="info-listing clearfix">
-                <dt class="ion-ios-toggle">RIF</dt>
-                <dd>J-{rif()}</dd>
+              {/* Tabla con la información */}
+              <TableContainer component={Paper} class="responsive-table">
+                <Table>
+                  {/* Encabezados de la tabla */}
+                  <TableHead>
+                    <TableRow>
+                      <TableCell class="blue-text text-darken-2">RIF</TableCell>
+                      <TableCell class="blue-text text-darken-2">Dirección</TableCell>
+                      <TableCell class="blue-text text-darken-2">Nombre de Empresa</TableCell>
+                      <TableCell class="blue-text text-darken-2">Nombre de Inspección</TableCell>
+                      <TableCell class="blue-text text-darken-2">Nombre del Inspector</TableCell>
+                      <TableCell class="blue-text text-darken-2">Requisitos</TableCell>
+                      <TableCell class="blue-text text-darken-2">Sancionado</TableCell>
+                      <TableCell class="blue-text text-darken-2">Vigente</TableCell>
+                    </TableRow>
+                  </TableHead>
 
-                <dt class="ion-ios-pricetag">Dirección</dt>
-                <dd>Avenida Principal, Maturín</dd>
-
-                <dt class="ion-ios-pricetag">Nombre de Empresa</dt>
-                <dd>Empresa ABC</dd>
-
-                <dt class="ion-ios-pricetag">Nombre de Inspección</dt>
-                <dd>Inspección General</dd>
-
-                <dt class="ion-ios-pricetag">Nombre de Inspector</dt>
-                <dd>John Doe</dd>
-
-                <dt class="ion-ios-pricetag">Requisitos</dt>
-                <dd>En progreso</dd>
-
-                <dt class="ion-ios-pricetag">¿Ha sido sancionado?</dt>
-                <dd>No</dd>
-
-                <dt class="ion-ios-pricetag">¿Está vigente?</dt>
-                <dd>Sí</dd>
-              </dl>
+                  {/* Cuerpo de la tabla */}
+                  <TableBody>
+                    {rows.map((row) => (
+                      <TableRow>
+                        <TableCell>J-{rif()}</TableCell>
+                        <TableCell>{row.direccion}</TableCell>
+                        <TableCell>{row.empresa}</TableCell>
+                        <TableCell>{row.inspeccion}</TableCell>
+                        <TableCell>{row.inspector}</TableCell>
+                        <TableCell>{row.requisitos}</TableCell>
+                        <TableCell>{row.sancionado}</TableCell>
+                        <TableCell>{row.vigente}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
             </div>
           </section>
         </div>
-
-  
-</div>
-
+      </div>
     </>
   );
 }

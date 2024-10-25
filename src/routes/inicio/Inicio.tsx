@@ -14,9 +14,8 @@ function Inicio() {
     <div class='Fondo'>
       {/* Header con degradado */}
       <Nav/>
-
-    {/* Carrusel con Materialize mostrando dos imágenes por slide con la imagen roja superpuesta */}
-    <Carrou/>
+      
+      <Carrou/>
 
     {/* Sección de Tarjetas con SUID y Materialize */}
     <Cards3/>

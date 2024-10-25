@@ -1,7 +1,8 @@
-import { Container, Grid, Card, CardContent, CardMedia } from '@suid/material'; // Importación de componentes de SUID
-import Per1 from '../../assets/perro1.jfif'
-import Per2 from '../../assets/perro2.jpg'
-import Per3 from '../../assets/perro3.jpg'
+import { Container, Grid, Card, CardContent, CardMedia, styled } from '@suid/material'; // Importación de componentes de SUID
+import Per1 from '../../assets/perro1.jfif';
+import Per2 from '../../assets/perro2.jpg';
+import Per3 from '../../assets/perro3.jpg';
+import { createSignal } from 'solid-js';
 
 // Datos de ejemplo para el catálogo
 const animalsData = [
@@ -22,25 +23,42 @@ const animalsData = [
   },
 ];
 
+// Componente estilizado para las cartas
+const AnimatedCard = styled(Card)(({ theme }) => ({
+  opacity: 0,
+  transform: 'translateY(20px)',
+  animation: 'fadeIn 1s forwards',
+  '@keyframes fadeIn': {
+    '0%': {
+      opacity: 0,
+      transform: 'translateY(20px)',
+    },
+    '100%': {
+      opacity: 1,
+      transform: 'translateY(0)',
+    },
+  },
+}));
+
 export default function AnimalCatalog() {
   return (
-    <Container sx={{ marginTop: '5%', marginLeft: '5%' }}>
-      <Grid container spacing={4}>
-        {animalsData.map((animal) => (
-          <Grid item xs={11} sm={5} md={4} xl={4}>
-            <Card class="hoverable" style={{ width: '100%' }}>
+    <Container sx={{ margin: "5% 0%" }}>
+      <Grid container spacing={4} sx={{ justifyContent: "center" }}>
+        {animalsData.map((animal, index) => (
+          <Grid item xs={12} sm={6} md={4} xl={4} style={{ animationDelay: `${index * 100}ms` }}>
+            <AnimatedCard class="hoverable">
               <CardMedia
                 component="img"
-                height="300"
+                height="250"
                 image={animal.image}
                 alt={animal.name}
-                sx={{borderBottom: '5px solid #fbf11f' }} // Aplica el efecto blur y un borde inferior
+                sx={{ borderBottom: '5px solid #fbf11f' }} // Aplica el efecto blur y un borde inferior
               />
               <CardContent>
                 <h2 style={{ "font-size": '1.5rem' }}>{animal.name}</h2>
                 <p style={{ "font-size": '1rem', color: '#757575' }}>Fecha de ingreso: {animal.date}</p>
               </CardContent>
-            </Card>
+            </AnimatedCard>
           </Grid>
         ))}
       </Grid>
