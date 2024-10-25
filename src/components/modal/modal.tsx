@@ -39,13 +39,13 @@ export default function CustomModal() {
   return (
     <>
       {/* Contenedor principal para centrar la tarjeta */}
-      <div style={{ display: 'flex', "justify-content": 'center', "align-items": 'center', height: '100%', "margin-top": "5%" }}>
-        <div class="col s12 m8">
-          <Box component="div" class="card" sx={{ width: { xs: "60vh", sm: "70vh", md: "100vh" } }}>
+      <div style={{ "justify-content": 'center', "align-items": 'center', "margin-top": "5%" }}>
+        <div>
+          <Box component="div" class="card" sx={{ width: { xs: "80%", sm: "70%", md: "70%", lg: "50%" }, height: {xs: "49.4vh", sm: "54.4vh", md: "36.7vh", lg: "27vh" } }}>
             <div class="card-content">
               {/* Formulario para ingresar el RIF */}
-              <form onSubmit={handleSubmit} style={{ "margin-top": "5%" }}>
-                <Box>
+              <form onSubmit={handleSubmit} style={{ }}>
+                <Box sx={{marginTop: {xs: "30%", sm: "25%", md: "8%", lg: "0%"} }}>
                   <div class="input-field col s6">
                     <input 
                       id="standard-number" 

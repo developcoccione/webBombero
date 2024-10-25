@@ -38,10 +38,11 @@ export default function ImageText() {
             opacity: isTextVisible() ? 1 : 0,
             transform: isTextVisible() ? 'translateX(0)' : 'translateX(-20px)',
             transition: 'opacity 0.8s ease, transform 0.8s ease',
+            
           }}
         >
           <Box component="h1" sx={{ fontSize: { xs: '1.5em', md: '2em' } }}>
-            <Box component="p" sx={{ fontSize: { xs: '1.3rem', md: '1.2rem', lg: '1.3rem' }, paddingLeft: { md: '150px' } }}>
+            <Box component="p" sx={{ fontSize: { xs: '1.5rem', md: '1.3rem', lg: '1.3rem' }, paddingLeft: { md: '100px', lg:'200px' }, textAlign: "justify", fontFamily: "arial" }}>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique eligendi cumque ea voluptatibus vel numquam repellendus, ad perspiciatis veritatis nisi sapiente quisquam vero deserunt qui harum aperiam odio id! Autem?
             </Box>
           </Box>

@@ -2,6 +2,8 @@ import { Container, Grid, Card, CardContent, CardMedia, styled } from '@suid/mat
 import Per1 from '../../assets/perro1.jfif';
 import Per2 from '../../assets/perro2.jpg';
 import Per3 from '../../assets/perro3.jpg';
+import Per4 from '../../assets/Per4.jpg';
+import Per5 from '../../assets/Perro5.jfif'
 import { createSignal } from 'solid-js';
 
 // Datos de ejemplo para el catálogo
@@ -20,6 +22,11 @@ const animalsData = [
     name: 'Bella',
     image: Per3,
     date: '2023-11-20',
+  },
+  {
+    name: 'Marbelia',
+    image: Per4,
+    date: '2023-02-22',
   },
 ];
 
@@ -42,17 +49,17 @@ const AnimatedCard = styled(Card)(({ theme }) => ({
 
 export default function AnimalCatalog() {
   return (
-    <Container sx={{ margin: "5% 0%" }}>
-      <Grid container spacing={4} sx={{ justifyContent: "center" }}>
+    <Container sx={{ marginTop: "5%" }}>
+      <Grid container spacing={7} sx={{ justifyContent: "center" }}>
         {animalsData.map((animal, index) => (
-          <Grid item xs={12} sm={6} md={4} xl={4} style={{ animationDelay: `${index * 100}ms` }}>
+          <Grid item xs={12} sm={6} md={4} xl={3} sx={{ animationDelay: `${index * 100}ms` }}>
             <AnimatedCard class="hoverable">
               <CardMedia
                 component="img"
                 height="250"
                 image={animal.image}
                 alt={animal.name}
-                sx={{ borderBottom: '5px solid #fbf11f' }} // Aplica el efecto blur y un borde inferior
+                sx={{ borderBottom: '5px solid #fbf11f', width: "100%" }} // Aplica el efecto blur y un borde inferior
               />
               <CardContent>
                 <h2 style={{ "font-size": '1.5rem' }}>{animal.name}</h2>

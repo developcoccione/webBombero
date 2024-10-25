@@ -42,10 +42,11 @@ export default function AnimatedText() {
                     textAlign: "justify",
                     marginTop: '5%',
                     marginBottom: "1%",
-                    fontSize: "120%",
+                    fontSize: "150%",
                     opacity: isVisible1() ? 1 : 0,
                     transform: isVisible1() ? 'translateY(0)' : 'translateY(20px)',
-                    transition: 'opacity 0.8s ease, transform 0.8s ease'
+                    transition: 'opacity 0.8s ease, transform 0.8s ease',
+                    fontFamily: "serif"
                 }}
             >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde hic corrupti voluptatum magni aperiam doloremque illum consequatur, dolores ab impedit laboriosam earum dolorem minima temporibus magnam, voluptas dolor, labore recusandae!
@@ -60,10 +61,11 @@ export default function AnimatedText() {
                 sx={{
                     textAlign: "justify",
                     marginBottom: "9%",
-                    fontSize: "120%",
+                    fontSize: "150%",
                     opacity: isVisible2() ? 1 : 0,
                     transform: isVisible2() ? 'translateY(0)' : 'translateY(20px)',
-                    transition: 'opacity 0.8s ease, transform 0.8s ease'
+                    transition: 'opacity 0.8s ease, transform 0.8s ease',
+                    fontFamily: "serif"
                 }}
             >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde hic corrupti voluptatum magni aperiam doloremque illum consequatur, dolores ab impedit laboriosam earum dolorem minima temporibus magnam, voluptas dolor, labore recusandae!

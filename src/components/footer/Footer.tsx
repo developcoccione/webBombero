@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <>
             {/* Primera sección del Footer */}
-            <Box component="footer" sx={{ background: '#fbf11f', padding: '2%', mt: '10%' }}>
+            <Box component="footer" sx={{ background: '#fbf11f', padding: '2%', mt: '5%' }}>
                 <Container>
                     <Grid container>
                         {/* Puedes agregar contenido adicional aquí si lo deseas */}
@@ -14,7 +14,7 @@ export default function Footer() {
             </Box>
 
             {/* Segunda sección del Footer */}
-            <Box component="footer" sx={{ background: '#242088', padding: '1%' }}>
+            <Box component="footer" sx={{ background: '#242088', padding: '0.1%'}}>
                 <Container>
                     <Grid container justifyContent="center" alignItems="center">
                         
@@ -26,7 +26,7 @@ export default function Footer() {
                                 alt="Escudo"
                                 sx={{
                                     width: { xs: '100px', sm: '100px', md: '150px' },
-                                    height: 'auto',
+                                    height: 'auto', padding: "1%"
                                 }}
                             />
                         </Grid>
