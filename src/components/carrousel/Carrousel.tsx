@@ -36,9 +36,9 @@ export default function Carrou() {
 
   return (
     <>
-      <div ref={carouselRef} class="carousel carousel-slider" style={{ "margin-top": '0%', }}>
+      <div ref={carouselRef} class="carousel carousel-slider" style={{ "margin-top": '0%' }}>
         <div class="carousel-item">
-          <div class="row" style={{ margin: '0', position: 'relative' }}>
+          <div class="row" style={{ margin: '0'}}>
             <div class="col s12" style={{ padding: 0 }}>
               <img 
                 src={F3} 
@@ -46,18 +46,14 @@ export default function Carrou() {
                 alt="Imagen 1" 
               />
             </div>
-            <div class="col s12" style={{ padding: 0, position: 'absolute', top: 0, left: '6%' }}>
+            <div class="col s12" style={{ padding: 0, position: 'absolute', top: 0, left: "9%" }}>
               <img 
                 src={Partelado}
                 class="ParteRoja"
                 style={{ 
-                  width: '44%',
-                  height: 'auto',
                   position: 'absolute',
                   top: '0',
-                  "z-index": 3,
                   margin: 0,
-                  filter: "hue-rotate(0deg)"
                 }} 
                 alt="Imagen Roja Superpuesta" 
               />
@@ -74,16 +70,13 @@ export default function Carrou() {
                 alt="Imagen 2" 
               />
             </div>
-            <div class="col s12" style={{ padding: 0, position: 'absolute', top: 0, left: '6%' }}>
+            <div class="col s12" style={{ padding: 0, position: 'absolute', top: 0,  left: "9%" }}>
               <img 
                 src={Partelado}
                 class="ParteRoja"
                 style={{ 
-                  width: '44%',
-                  height: 'auto',
                   position: 'absolute',
                   top: '0',
-                  "z-index": 3,
                   margin: 0
                 }} 
                 alt="Imagen Roja Superpuesta" 
@@ -101,16 +94,13 @@ export default function Carrou() {
                 alt="Imagen 3" 
               />
             </div>
-            <div class="col s12" style={{ padding: 0, position: 'absolute', top: 0, left: '6%' }}>
+            <div class="col s12" style={{ padding: 0, position: 'absolute', top: 0, left: "9%"  }}>
               <img 
                 src={Partelado}
                 class="ParteRoja"
                 style={{ 
-                  width: '44%',
-                  height: 'auto',
                   position: 'absolute',
                   top: '0',
-                  "z-index": 3,
                   margin: 0
                 }} 
                 alt="Imagen Roja Superpuesta" 

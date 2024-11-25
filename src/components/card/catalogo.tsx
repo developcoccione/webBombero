@@ -24,7 +24,7 @@ const animalsData = [
     date: '2023-11-20',
   },
   {
-    name: 'Marbelia',
+    name: 'Mia',
     image: Per4,
     date: '2023-02-22',
   },

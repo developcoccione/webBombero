@@ -95,7 +95,7 @@ export default function CustomModal() {
           {/* Card estilo Confluence - Neutral */}
           <section class="card neutral">
             <div class="main-content">
-              <div class="card-title status-label">Información del Personal</div>
+              <div class="card-title status-label">Información de Certificado</div>
 
               {/* Tabla con la información */}
               <TableContainer component={Paper} class="responsive-table">

@@ -5,6 +5,8 @@ import Trayecto from './trayecto/trayecto';
 import Certificado from './certificacion/Certificacion';
 import Mascotas from './mascotas/mascotas';
 import Requisito from './requisitos/requisitos';
+import Layaout from '../routes/layaout/layaout';
+import GestionNoti from '../components/dashboard/noticias/gestionnoti';
 
 
 const routes: RouteProps<any, () => Component>[] = [
@@ -28,6 +30,15 @@ const routes: RouteProps<any, () => Component>[] = [
     path: '/requisito',
     component: Requisito,
   },
+  {
+    path: '/layaout',
+    component: Layaout,
+  },
+  {
+    path: '/gestionnoti',
+    component: GestionNoti,
+  },
+
 ];
 
 export default routes;
