@@ -1,3 +1,4 @@
+import FloatingActionButtons from "../../modal/Buttonagregar";
 import Navbar from "../../nav/navbar";
 
 
@@ -14,6 +15,10 @@ export default function GestionNoti(){
         >
             <Navbar/>
             
+
+            <FloatingActionButtons/>
+
+
         </main>
         </div>
         </>

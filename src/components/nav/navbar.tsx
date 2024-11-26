@@ -111,19 +111,24 @@ function Navbar() {
           </a>
 
 
-          <ListItemButton sx={{ pl: 3 }}>
-            <ListItemIcon>
-              <FlagIcon/>
-            </ListItemIcon>
-            <ListItemText primary="Actualizacion de Mision" sx={{ color: "black" }}/>
-          </ListItemButton>
+          <a href="/mision" style={{ width: "100%" }}>
+            <ListItemButton sx={{ pl: 3 }}>
+              <ListItemIcon>
+                  <FlagIcon/>
+                </ListItemIcon>
+              <ListItemText primary="Actualizacion de Mision" sx={{ color: "black" }}/>
+            </ListItemButton>
+          </a>
 
-          <ListItemButton sx={{ pl: 3 }}>
-            <ListItemIcon>
-              <HistoryEduIcon/>
-            </ListItemIcon>
-            <ListItemText primary="Gestion de Certificado" sx={{ color: "black" }}/>
-          </ListItemButton>
+          <a href="/gestioncertificado" style={{ width: "100%" }}>
+            <ListItemButton sx={{ pl: 3 }}>
+              <ListItemIcon>
+                <HistoryEduIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Gestion de Certificado" sx={{ color: "black" }}/>
+            </ListItemButton>
+          </a>
+
         </List>
       </div>
 

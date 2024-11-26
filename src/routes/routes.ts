@@ -7,6 +7,8 @@ import Mascotas from './mascotas/mascotas';
 import Requisito from './requisitos/requisitos';
 import Layaout from '../routes/layaout/layaout';
 import GestionNoti from '../components/dashboard/noticias/gestionnoti';
+import Mision from './layaout/mision/mision';
+import GestionCertificado from './layaout/certificado/certificado';
 
 
 const routes: RouteProps<any, () => Component>[] = [
@@ -37,6 +39,14 @@ const routes: RouteProps<any, () => Component>[] = [
   {
     path: '/gestionnoti',
     component: GestionNoti,
+  },
+  {
+    path: '/mision',
+    component: Mision,
+  },
+  {
+    path: '/gestioncertificado',
+    component: GestionCertificado,
   },
 
 ];
